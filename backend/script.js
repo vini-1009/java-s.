@@ -37,9 +37,9 @@ function addTaskToUl(task) {
     taskList.appendChild(li);
 }
 
-async function loadTask(){
-    try{
-        const res = await fetch (apiUrl);
+async function loadTask() {
+    try {
+        const res = await fetch(apiUrl);
 
         if (!res.ok) throw new Error("Erro ao carregar tarefas");
 
@@ -47,15 +47,15 @@ async function loadTask(){
         taskList.innerHTML = "";
         task.forEach(addTaskToUl);
 
-    
-    }catch(err) {
+
+    } catch (err) {
         alert("Erro ao carregar tarefas: " + err.message);
     }
 
-}  
+}
 
 async function toggleComplete(id, completed) {
-    try{
+    try {
         await fetch(`${apiUrl}/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },

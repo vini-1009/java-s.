@@ -34,3 +34,7 @@ li {
 #button:hover {
     background-color: blue;
 }
+.completed {
+    text-decoration: line-through;
+    color: 0.6;
+}
